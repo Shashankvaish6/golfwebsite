@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: #fff;
+}
+body,body{
+    height: 100%;
+    width: 100%;
+}
+#cursor{
+    z-index: 100;
+    height: 30px;
+    width: 30px;
+    background-color: #bae447;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 9;
+}
+#cursor-blur{
+    z-index: 9;
+    filter: blur(170px);
+    height: 300px;
+    width: 300px;
+    background-color: #bae447;
+    position: fixed;
+    border-radius: 50%;
+}
+#nav{
+    position: fixed;
+    padding: 0 150px;
+    height: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 35px;
+    /* background-color: aqua; */
+    z-index: 99;
+}
+#nav img{
+    
+    height: 75px;
+
+}
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#main{
+    position:relative;
+    background-color: rgba(0, 0, 0, 0.37); 
+    
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+    
+}
+#page1 h1{
+    margin-top: 70px;
+    position: relative;
+    
+    
+
+    font-size: 110px;
+    font-weight: 900;
+}
+#page1 h1::before{
+    color: #000;
+    left: -4px;
+    top: -4px;
+    position: absolute;
+    content: 'EAT. DRINK. PLAY.';
+    z-index: -1;
+    -webkit-text-stroke: 2px #95C11E;
+}
+#page1 h3{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 800;
+    
+    
+}
+#page1 p{
+    font-size: 20px;
+    width: 40%;
+    font-weight: 500;
+}
+#page2{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+
+}
+
+
+#scroller{
+    /* background-color:; */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 10;
+
+}
+#scroller h4{
+    display: inline-block;
+    color: transparent;
+    font-size: 90px;
+    font-weight: 800;
+    margin-right: 20px;
+    font-family: gilroy;
+    -webkit-text-stroke: 1px white;
+
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in h4:hover{
+    color: #95C11E;
+    /* background-color: #95C11E; */
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    transition: all linear 0.5s;
+    animation: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about-us{
+    position: relative;
+    padding: 0 50px;
+    height: 60vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+#about-us img{
+    border-radius: 20px;
+    height: 40%;
+    width: 13%;
+}
+#about-us-in{
+    padding: 0px 65px;
+    /* gap: 200px; */
+}
+#about-us-in h3{
+    text-align: center;
+    font-size: 44px;
+    font-weight: 800;
+
+}
+#about-us-in p{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 40px;
+
+}
+#card-container{
+    position: relative;
+    padding: 0px 20px;
+    height: 80vh;
+    width: 100%;
+    /* background-color: black; */
+    z-index: 9;
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+
+
+}
+.card{
+    overflow: hidden;
+    border-radius: 30px;
+    height: 90%;
+    width: 28%;
+    /* background-color: blue; */
+    background-position: center;
+    background-size: cover;
+}
+#card1{
+    background-image: url(https://source.unsplash.com/random);
+}
+#card2{
+    background-image: url(https://source.unsplash.com/featured/500x600);
+}
+#card3{
+    background-image: url(https://source.unsplash.com/random/?city,night);
+}
+.overlay{
+    transition: 0.6s;
+    
+    z-index: 9;
+    /* padding-top: ; */
+    
+    border-radius: 30px;
+    height: 100%;
+    padding-left: 20px;
+    width: 100%;
+    background-color: #bae447;
+    padding-top: 70px;
+    opacity: 0;
+    position: relative;
+    
+    /* margin-top: 88px; */
+}
+.overlay h3{
+
+    color: #000;
+    /* margin: 3px; */
+    /* margin-right: px; */
+    font-size: 45px;
+    font-weight: 700;
+    /* text-align: center; */
+}
+.overlay p{
+    color: #000;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 400;
+}
+#card1:hover .overlay{
+    opacity: 1;
+    /* background-color: #bae447; */
+}
+#card2:hover .overlay{
+    opacity: 1;
+    /* background-color: #bae447; */
+}
+#card3:hover .overlay{
+    
+    opacity: 1;
+    /* background-color: #bae447; */
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
